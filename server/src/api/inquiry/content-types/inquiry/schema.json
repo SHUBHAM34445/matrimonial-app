@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "inquiries",
+  "info": {
+    "singularName": "inquiry",
+    "pluralName": "inquiries",
+    "displayName": "Inquiry"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "subject": {
+      "type": "string"
+    },
+    "message": {
+      "type": "blocks"
+    },
+    "statuses": {
+      "type": "enumeration",
+      "enum": [
+        "New",
+        "In Progress",
+        "Resolved",
+        "Closed"
+      ]
+    },
+    "submittedAt": {
+      "type": "datetime"
+    }
+  }
+}

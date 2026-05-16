@@ -1,0 +1,145 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_profiles",
+  "info": {
+    "singularName": "user-profile",
+    "pluralName": "user-profiles",
+    "displayName": "User Profile"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "firstName": {
+      "type": "string",
+      "required": true
+    },
+    "lastName": {
+      "type": "string",
+      "required": true
+    },
+    "gender": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "Male",
+        "Female",
+        "Other"
+      ]
+    },
+    "height": {
+      "type": "string"
+    },
+    "maritalStatus": {
+      "type": "enumeration",
+      "enum": [
+        "Never Married",
+        "Divorced",
+        "Widowed",
+        "Awaiting Divorce"
+      ]
+    },
+    "religion": {
+      "type": "string"
+    },
+    "caste": {
+      "type": "string"
+    },
+    "motherTongue": {
+      "type": "string"
+    },
+    "educationLevel": {
+      "type": "string"
+    },
+    "profession": {
+      "type": "string"
+    },
+    "income": {
+      "type": "string",
+      "regex": "5-10 LPA"
+    },
+    "country": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "aboutMe": {
+      "type": "blocks"
+    },
+    "partnerPreferences": {
+      "type": "json"
+    },
+    "profilePicture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "galleryImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "contactNumber": {
+      "type": "string",
+      "unique": true
+    },
+    "whatsappNumber": {
+      "type": "string"
+    },
+    "diet": {
+      "type": "enumeration",
+      "enum": [
+        "Vegetarian",
+        "Non-Vegetarian",
+        "Vegan",
+        "Eggetarian"
+      ]
+    },
+    "smokingHabits": {
+      "type": "enumeration",
+      "enum": [
+        "Non-smoker",
+        "Occasional smoker",
+        "Regular smoker"
+      ]
+    },
+    "drinkingHabits": {
+      "type": "enumeration",
+      "enum": [
+        "Non-drinker",
+        "Social drinker",
+        "Regular drinker"
+      ]
+    },
+    "isVerified": {
+      "type": "boolean",
+      "default": false
+    },
+    "profileCompletionPercentage": {
+      "type": "integer",
+      "default": 0
+    },
+    "dateOfBirth": {
+      "type": "date"
+    },
+    "hobbies": {
+      "type": "json"
+    }
+  }
+}

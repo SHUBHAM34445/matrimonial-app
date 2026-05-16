@@ -1,0 +1,323 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    line-height: 1.6;
+  }
+
+  #menu {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFEDF3;
+    padding: 10px 10px;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  }
+
+  .menu-item {
+    position: relative;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px; /* Added some general rounded corners */
+  }
+
+  .menu-item a:hover {
+    color: #750000;
+  }
+
+  .menu-item a {
+    color: rgb(54, 0, 0);
+    text-decoration: none;
+    display: block; /* Make links fill the area */
+  }
+
+  .sub-menu {
+    display: none; 
+    position: absolute;
+    background-color: #88ac4694; /* Transparent with some color */
+    backdrop-filter: blur(8px); /* Apply blur effect */
+    padding: 15px;
+    min-width: 250px;
+    z-index: 1000;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%;
+    /* border: 1px solid #fff1f1; */
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.3s ease-out forwards;
+}
+
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+  }
+
+
+  .menu-item:hover .sub-menu {
+    display: block;
+  }
+
+  .icon-box {
+    display: flex;
+    align-items: flex-start; /* Align items to the start */
+    padding: 10px 0;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    border-radius: 4px;
+  }
+
+  .icon-box:hover {
+      background-color: rgba(255,255,255,0.1);
+      transform: translateX(5px);
+  }
+
+  .icon-box .icon {
+    margin-right: 15px;
+    font-size: 1.4em; /* Slightly larger icons */
+    color: #87CEEB; /* A light blue for icons */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+  }
+
+  .icon-box .text {
+      flex-grow: 1;
+  }
+
+  .icon-box .title {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: white;
+  }
+  .icon-box .title i {
+      margin-left: 5px;
+      font-size: 0.9em;
+      opacity: 0.7;
+  }
+
+  .sub-text {
+    font-size: 0.85em;
+    color: #ccc;
+  }
+
+  /* Responsive grid for double and triple menus */
+  .sub-menu.double,
+  .sub-menu.triple {
+      display: none;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adaptive columns */
+      gap: 20px;
+      width: auto;
+      min-width: unset; /* Remove fixed min-width for flexibility */
+  }
+
+  @media (min-width: 768px) { /* Adjust min-width for larger screens */
+      .sub-menu.double {
+          grid-template-columns: 1fr 1fr;
+          min-width: 450px;
+      }
+      .sub-menu.triple {
+          grid-template-columns: 1fr 1fr 1fr;
+          min-width: 650px;
+      }
+  }
+
+
+  .bottom-container {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding-top: 15px;
+      border-top: 1px solid #555;
+      margin-top: 10px;
+  }
+  .bottom-container a {
+      color: #87CEEB;
+      font-weight: bold;
+      margin-left: 5px;
+  }
+
+  .box {
+      background-color: rgba(0,0,0,0.2); /* Slightly darker background for boxes */
+      padding: 15px;
+      border-radius: 5px;
+  }
+  .box h3 {
+      margin-top: 0;
+      color: #eee;
+      font-size: 1.1em;
+      margin-bottom: 10px;
+  }
+  .box a {
+      display: block;
+      padding: 5px 0;
+      color: #ccc;
+      text-decoration: none;
+      transition: color 0.2s ease;
+  }
+  .box a:hover {
+      color: white;
+      text-decoration: underline;
+  }
+
+  .icon-box.flat {
+      background-color: rgba(0,0,0,0.1);
+      padding: 10px;
+      border-radius: 5px;
+  }
+  .icon-box.flat .icon {
+      font-size: 1.2em;
+      color: #fff;
+  }
+  .icon-box.flat .text .title {
+      font-weight: normal;
+      font-size: 1em;
+  }
+  .icon-box.flat:hover {
+      background-color: rgba(0,0,0,0.3);
+  }
+
+  #sub-menu-container {
+      /* This is likely for JavaScript-driven hover effects / animations from the original code.
+         It's kept here for structural integrity but is hidden by default without JS. */
+      display: none;
+  }
+
+  #info-box {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      background-color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  #info-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  }
+  #info-box li {
+      margin-bottom: 8px;
+  }
+  #info-box li:last-child {
+      margin-bottom: 0;
+  }
+  #info-box a {
+      color: #007bff;
+      text-decoration: none;
+      transition: color 0.2s ease;
+  }
+  #info-box a:hover {
+      color: #0056b3;
+      text-decoration: underline;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* Why Choose Us */
+.why_choose{ 
+    width:100%; 
+    margin: 0 0 50px; 
+    font-family: 'Raleway', sans-serif; 
+  }
+  .why_choose_head{ 
+    width:100%; 
+    text-align:center; 
+    /* padding:30px; */
+  }
+  .why_choose_head h1{ 
+    width:100%; 
+    color: #000000; 
+    text-align:center; 
+    font-size:32px; 
+    font-family: 'Raleway-Medium', sans-serif;
+  }
+  .why_choose_head h1 span{ 
+    border-bottom: 2px solid #a2437e; 
+  }
+  .text-down { 
+    position:relative; 
+    overflow:hidden;
+  }
+  .text-down img{ 
+    width:100%; 
+    height:200px;
+  }
+  .text-down .textbox { 
+    width:100%; 
+    height:300px; 
+    position:absolute; 
+    top:0; 
+    left:0; 
+    margin-top:-255px;
+    -webkit-border-radius:50px; 
+    -moz-border-radius:50px; 
+    -ms-border-radius:50px; 
+    border-radius:5px;
+    background-color: #a2437e61; 
+    -webkit-transition: all 0.7s ease; 
+    transition: all 0.7s ease; 
+  }
+  .text-down:hover .textbox { 
+    margin-top:0;
+  }
+  .details{ 
+    width:100%; 
+    padding: 30px 30px 0;  
+    text-align:center; 
+    color:rgba(255,255,255,1); 
+    font-size:16px;
+    font-family: 'Raleway-Light', sans-serif; 
+  }
+  .view-more{ 
+    width:100%; 
+    padding-top:0;  
+    text-align:center; 
+    color:rgba(255,255,255,1); 
+    font-size:20px;
+    font-weight:bold;
+  }
+  .text { 
+    /* text-align:center;  */
+    /* padding-top: 70px;  */
+    color:rgba(255,255,255,1); 
+    /* font-size:20px; */
+    font-family: 'Raleway-Light', sans-serif; 
+  }
+  .top { 
+    padding-top:10px;
+    width: 300px;
+  }

@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "static_contents",
+  "info": {
+    "singularName": "static-content",
+    "pluralName": "static-contents",
+    "displayName": "Static Content"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "pageName": {
+      "type": "string"
+    },
+    "content": {
+      "type": "blocks"
+    },
+    "lastUpdated": {
+      "type": "datetime"
+    }
+  }
+}

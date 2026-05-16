@@ -1,0 +1,19 @@
+/* src/app/globals.scss */
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+
+body,
+html {
+  position: relative;
+  overflow-x: hidden; 
+  z-index: 0;
+}
+
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+* {
+  box-sizing: border-box;
+}

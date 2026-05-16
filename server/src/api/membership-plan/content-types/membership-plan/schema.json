@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "membership_plans",
+  "info": {
+    "singularName": "membership-plan",
+    "pluralName": "membership-plans",
+    "displayName": "Membership Plan"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "durationInMonths": {
+      "type": "integer"
+    },
+    "features": {
+      "type": "json"
+    },
+    "isPopular": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

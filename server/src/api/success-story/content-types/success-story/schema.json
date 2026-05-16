@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "success_stories",
+  "info": {
+    "singularName": "success-story",
+    "pluralName": "success-stories",
+    "displayName": "Success Story"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "coupleName": {
+      "type": "string"
+    },
+    "storyContent": {
+      "type": "blocks"
+    },
+    "couplePhoto": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "weddingDate": {
+      "type": "date"
+    },
+    "isApproved": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
